@@ -236,11 +236,28 @@
                     class="bg-primary border-2 border-black p-2 rounded-lg hover:shadow-brutal-sm transition-all active:translate-x-1 active:translate-y-1">
                     <span class="material-icons">shopping_bag</span>
                 </button>
-                <button class="md:hidden">
+                <button id="mobile-menu-btn" class="md:hidden">
                     <span class="material-icons text-3xl">menu</span>
                 </button>
             </div>
         </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md z-[60] flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-300 md:hidden">
+            <button id="close-menu-btn"
+                class="absolute top-6 right-6 bg-primary border-2 border-black rounded-full p-2 hover:rotate-90 transition-transform">
+                <span class="material-icons text-3xl text-black">close</span>
+            </button>
+            <a href="#"
+                class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Drinks</a>
+            <a href="#"
+                class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Philosophy</a>
+            <a href="#"
+                class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Find
+                Us</a>
+            <a href="#"
+                class="text-5xl font-black uppercase text-electric-purple hover:text-primary hover:skew-x-[-10deg] transition-transform">Merch</a>
+        </div>
     </header>
     <!-- Hero Section -->
     <main class="relative min-h-screen flex flex-col items-center justify-center pt-24 overflow-hidden">
@@ -248,11 +265,11 @@
         <div class="absolute inset-0 z-0 overflow-hidden">
             <div class="psychedelic-bg absolute inset-0"></div>
             <!-- Decorative "Weird" floating text -->
-            <div class="absolute top-1/4 -left-20 rotate-12 opacity-10">
-                <h2 class="text-[12rem] font-black leading-none text-stroke">WEIRD</h2>
+            <div class="absolute top-1/4 -left-10 md:-left-20 rotate-12 opacity-10 pointer-events-none">
+                <h2 class="text-8xl md:text-[12rem] font-black leading-none text-stroke">WEIRD</h2>
             </div>
-            <div class="absolute bottom-1/4 -right-20 -rotate-12 opacity-10">
-                <h2 class="text-[12rem] font-black leading-none text-stroke">WIRED</h2>
+            <div class="absolute bottom-1/4 -right-10 md:-right-20 -rotate-12 opacity-10 pointer-events-none">
+                <h2 class="text-8xl md:text-[12rem] font-black leading-none text-stroke">WIRED</h2>
             </div>
         </div>
         <div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
@@ -729,7 +746,7 @@
                 <!-- Large Catchphrase -->
                 <div>
                     <h2
-                        class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter uppercase mb-6">
+                        class="text-5xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter uppercase mb-6">
                         Join the <br /> <span class="text-outline">Weirdos</span>
                     </h2>
                     <p class="text-xl md:text-2xl font-bold uppercase tracking-widest max-w-md">
@@ -854,6 +871,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.style.overflow = mobileMenu.classList.contains('translate-x-full') ? '' : 'hidden';
+        }
+
+        if (menuBtn && closeBtn) {
+            menuBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', toggleMenu));
+        }
 
         // Fade in sections on scroll
         gsap.utils.toArray("section").forEach(section => {
