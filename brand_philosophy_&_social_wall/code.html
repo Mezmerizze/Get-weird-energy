@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#63ed0c",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#172210",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .grainy-overlay {
+            position: relative;
+        }
+        .grainy-overlay::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.04;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 50;
+        }
+        .thick-border {
+            border: 3px solid #000;
+        }
+        .neo-shadow {
+            box-shadow: 6px 6px 0px 0px #000;
+        }
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .hover-lift:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px 0px #000;
+        }
+        .rotate-weird-ccw { transform: rotate(-1.5deg); }
+        .rotate-weird-cw { transform: rotate(1.2deg); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-black dark:text-white overflow-x-hidden grainy-overlay">
+<!-- Header Navigation -->
+<nav class="sticky top-0 z-40 bg-background-light dark:bg-background-dark border-b-4 border-black p-4 flex justify-between items-center">
+<div class="text-3xl font-black tracking-tighter uppercase italic">
+            Drink <span class="bg-primary px-2">Weird</span>
+</div>
+<div class="hidden md:flex gap-8 font-extrabold uppercase text-sm">
+<a class="hover:text-primary transition-colors" href="#">Shop</a>
+<a class="hover:text-primary transition-colors" href="#">Philosophy</a>
+<a class="hover:text-primary transition-colors" href="#">Community</a>
+</div>
+<button class="bg-primary thick-border neo-shadow px-6 py-2 font-black uppercase text-sm hover:translate-y-1 hover:shadow-none transition-all">
+            Get Weird
+        </button>
+</nav>
+<!-- Hero Ticker -->
+<div class="bg-primary border-b-4 border-black py-4 overflow-hidden select-none">
+<div class="flex animate-marquee whitespace-nowrap">
+<span class="text-2xl font-black uppercase px-4 italic">No Sugar • All Energy • Stay Weird • 100% Recyclable • Natural Caffeine • No Sugar • All Energy • Stay Weird • 100% Recyclable • Natural Caffeine •</span>
+</div>
+</div>
+<!-- The Weird Way Section -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+<div class="mb-12">
+<h2 class="text-7xl md:text-9xl font-black uppercase leading-none tracking-tighter mb-4">
+                The <span class="text-primary italic">Weird</span><br/>Way.
+            </h2>
+<p class="text-xl md:text-2xl font-medium max-w-2xl leading-tight">
+                We aren't your typical jitter juice. We craft energy for the bold, the outliers, and the ones who never sit still.
+            </p>
+</div>
+<!-- Bento Grid Philosophy -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Ingredient Card: No Sugar -->
+<div class="md:col-span-8 bg-white dark:bg-zinc-900 thick-border rounded-xl p-8 hover-lift transition-all relative overflow-hidden group">
+<div class="relative z-10">
+<span class="bg-black text-primary px-3 py-1 font-black uppercase text-xs rounded-full">Ingredients</span>
+<h3 class="text-6xl font-black uppercase mt-4 mb-2">0g Sugar</h3>
+<p class="text-lg font-bold max-w-md">Sweetened with monk fruit and pure vibes. No crash, just sustained energy to keep you moving through the madness.</p>
+</div>
+<img class="absolute top-0 right-0 h-full w-1/2 object-cover opacity-20 group-hover:opacity-40 transition-opacity grayscale group-hover:grayscale-0" data-alt="Abstract vibrant green splashes on black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxccnUX43rQIwzmv8P8tsqQzjoweSxQfGSyW5kRC_yxqeep1R-g0QMTrOCdO72zsYvK8CIM4iYunyrZ68MfTiRIPlqc8y050UQespjMtneqGYXuz2sYbWSU8eWiIb4e6cQCj8YX81I2VWSt3d9nDgACm61rfZl81dt7YDMnJvP0STdwEcxxLv37dy69oos_rzwUUkS60VS5qFWc_P8se8c2Wefokn-aCVvDp11M19bBUSxVh9mgU0Y_FAFDtd2GmVI1ag7LpsyVF8"/>
+</div>
+<!-- Ingredient Card: Natural Caffeine -->
+<div class="md:col-span-4 bg-primary thick-border rounded-xl p-8 hover-lift transition-all flex flex-col justify-between rotate-weird-cw">
+<div>
+<span class="bg-black text-white px-3 py-1 font-black uppercase text-xs rounded-full">Power</span>
+<h3 class="text-4xl font-black uppercase mt-4">Natural Caffeine</h3>
+</div>
+<div class="mt-8">
+<span class="material-icons text-7xl">bolt</span>
+<p class="font-black mt-4 uppercase">Sourced from Organic Green Tea.</p>
+</div>
+</div>
+<!-- Ingredient Card: Recyclable -->
+<div class="md:col-span-4 bg-zinc-200 dark:bg-zinc-800 thick-border rounded-xl p-8 hover-lift transition-all flex flex-col justify-between rotate-weird-ccw">
+<h3 class="text-4xl font-black uppercase">Infinite Loop</h3>
+<div class="space-y-4">
+<p class="font-bold">Our cans are 100% recyclable, 100% of the time. Drink, crush, repeat.</p>
+<div class="w-16 h-16 border-4 border-black rounded-full flex items-center justify-center">
+<span class="material-icons text-4xl">recycling</span>
+</div>
+</div>
+</div>
+<!-- Philosophy Card: The Ethics -->
+<div class="md:col-span-8 bg-white dark:bg-zinc-900 thick-border rounded-xl p-8 hover-lift transition-all relative overflow-hidden">
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-4xl font-black uppercase mb-4 italic">Built Different.</h3>
+<p class="font-bold text-lg mb-6">We prioritize people over profits, sustainability over shortcuts, and weirdness over vanilla everything.</p>
+<button class="bg-black text-primary px-8 py-3 font-black uppercase rounded-full hover:scale-105 transition-transform">
+                            Read Our Manifesto
+                        </button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary/20 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+<span class="font-black text-2xl italic">1%</span>
+<span class="text-[10px] uppercase font-bold">For the Planet</span>
+</div>
+<div class="bg-primary/20 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+<span class="font-black text-2xl italic">Vegan</span>
+<span class="text-[10px] uppercase font-bold">Plant Based</span>
+</div>
+<div class="bg-primary/20 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+<span class="font-black text-2xl italic">GMO</span>
+<span class="text-[10px] uppercase font-bold">Free Energy</span>
+</div>
+<div class="bg-primary/20 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+<span class="font-black text-2xl italic">B-Corp</span>
+<span class="text-[10px] uppercase font-bold">Certified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Section / Social Wall -->
+<section class="bg-black py-24 relative">
+<div class="max-w-7xl mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="text-primary text-6xl md:text-8xl font-black uppercase italic leading-none">The<br/>Weirdos.</h2>
+<p class="text-white text-xl font-bold mt-4 uppercase tracking-widest">Community tagged #GETWEIRD</p>
+</div>
+<button class="bg-primary thick-border neo-shadow px-10 py-4 font-black uppercase text-xl hover:translate-y-1 hover:shadow-none transition-all">
+                    Join the Cult
+                </button>
+</div>
+<!-- Masonry Social Wall -->
+<div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+<!-- Social Card 1 -->
+<div class="break-inside-avoid relative group">
+<div class="bg-white p-2 rounded-lg thick-border transform -rotate-1 group-hover:rotate-0 transition-transform">
+<img class="w-full h-auto rounded-md grayscale hover:grayscale-0 transition-all duration-500" data-alt="High energy person skateboarding on urban street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcVCCQJp-Dato8_-_DyX1uUfrzbSwbx1qVDBn5FOUEPPjtadeXwLtStbLcSkApdG_3AC6IdbKGGwcDmhCOgAfTwxPoh55d_hvx06mH6KmqqGXj0tt560wiPe26AZsMhco168gFkdKkyQ_9OKH5wks70R4D355SRE3oyx3YqIm-BKtzpPYyfreuTrHKHfW5O79faJYAfPIBQtnPeyKr7SpP189Nk9iPrIvaVQc9xKzCqdL4dVU9H17hb7SvsOAj0X85V7Fr1H0jnFc"/>
+<div class="p-4 bg-white text-black">
+<p class="font-black uppercase text-sm">@shred_master_99</p>
+<p class="text-xs font-bold mt-1 text-zinc-600 italic">Fueling the midnight session. #GETWEIRD</p>
+</div>
+</div>
+<div class="absolute -top-4 -right-4 bg-primary rounded-full w-12 h-12 flex items-center justify-center thick-border font-black text-xl rotate-12">★</div>
+</div>
+<!-- Social Card 2 -->
+<div class="break-inside-avoid relative group">
+<div class="bg-white p-2 rounded-lg thick-border transform rotate-2 group-hover:rotate-0 transition-transform">
+<img class="w-full h-auto rounded-md grayscale hover:grayscale-0 transition-all duration-500" data-alt="Athletic person performing intense yoga outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABE5FcKicFkdmlSlc-NmaTKcSFZu3IauwT7Me02cK09Nhb2HWC_RLxPmR8-dmoZboDa-92SMy_XA3DetktO-PR4CAwqxW_6R7SqlPPMD0a7m6RCNZ7jaXlJBZnR8PPWCd0WXrmSb79mfy6ExuoIQLulDpMYpO323ykHDOSHd_D1W2RM33fz0MJePeVmCPu2c3orf83JX85-wfbcjDkKqwTVAlwf6FfuC9rVVrxoP1wIIhLjM_fK9BsVS3tFI65Ac7jdIbE_CS3tsg"/>
+<div class="p-4 bg-white text-black">
+<p class="font-black uppercase text-sm">@yogi_flow_state</p>
+</div>
+</div>
+</div>
+<!-- Social Card 3 -->
+<div class="break-inside-avoid relative group">
+<div class="bg-white p-2 rounded-lg thick-border transform -rotate-2 group-hover:rotate-0 transition-transform">
+<img class="w-full h-auto rounded-md grayscale hover:grayscale-0 transition-all duration-500" data-alt="Powerlifter screaming mid lift in dark gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaaDFJxG_VWC7ErQ-LSMYs6mtqwcngrJGnIkbcB7QEfuwoEhI2HDKQmd3vDdF85jAZjy3nx8rtk5vZSA7ftL0zbecrzWabo7fXsAP8XmfBMgwHOkltCBrHxgSRRIBx3_TKjSGSpKqd3lT0XcBiNeiOJ938LZIffwq_2TYrBvpafxi6fD8dXBzQOKCXP_xFYL9jSpHip8V4W8YOI09-nkfgJPqSfJ-LsA1A4TMthnF0ndSp72j7JOLd0yziXZV5Jz-IBgyQNwHyDqs"/>
+<div class="p-4 bg-white text-black">
+<p class="font-black uppercase text-sm">@bulk_king</p>
+<p class="text-xs font-bold mt-1 text-zinc-600 italic">Clean caffeine for heavy sets.</p>
+</div>
+</div>
+</div>
+<!-- Social Card 4 -->
+<div class="break-inside-avoid relative group">
+<div class="bg-white p-2 rounded-lg thick-border transform rotate-1 group-hover:rotate-0 transition-transform">
+<div class="aspect-square bg-zinc-900 flex items-center justify-center p-8 overflow-hidden">
+<img class="w-full h-full object-cover rounded-md opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all" data-alt="Dynamic shot of a runner at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKWx2zJIaaRMXccGXDyliJe49n8iOALEO1Fp6bHy2CXXM6oSlaJr_FhC7Rq3sUoCLQLkG1TipwKc7emaxNTCvtNtcxvAyHVQDn6dwSsl3PaR4oFpHt25BjeAVbm6tYbn9imouRPVCkpMqB3-gux6d_Mk_Oshb2sjrjLauPYTQggRFRtt8a-cwhxZEQH15nT6fHFyC7hXJD5HNAjITPooyYhgiP5i5o-4fJJV5fUPkcNjuNgxFnEgeskFNuf0ZXHW5tCxsnGxT_B6o"/>
+</div>
+<div class="p-4 bg-white text-black">
+<p class="font-black uppercase text-sm">@midnight_runner</p>
+</div>
+</div>
+<div class="absolute -bottom-4 -left-4 bg-white p-2 thick-border font-black text-xs uppercase">Sticker: Stay Weird</div>
+</div>
+<!-- Social Card 5 -->
+<div class="break-inside-avoid relative group">
+<div class="bg-white p-2 rounded-lg thick-border transform rotate-3 group-hover:rotate-0 transition-transform">
+<img class="w-full h-auto rounded-md grayscale hover:grayscale-0 transition-all duration-500" data-alt="Close up of action sports athlete sweating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdwAtOttPpPdx79dl1wFzeEX84BfMyiIxSacUULsLJtLCWlcCQ7sT5uo4Z1SiDA-XkZPIl55KhBeROP6lXMYnEubMxr_KWZZ1EfJr3Je8eEa4wXymVVjEd2L-tqixFMCf4Re2zlpCgBST80CWg8Kl6xU_oHua9qETW8vBBTAlMVS0aPs3Io1Tc3E4N4EXrxvFJQsQSzHvaFXtXMEUqfDS-wxJWrSNQdNK-2UsrPp0QW5ybqNLF7LOCCwP3Fq0ujM8xiLGjKpb9k38"/>
+<div class="p-4 bg-white text-black">
+<p class="font-black uppercase text-sm">@athlete_extreme</p>
+</div>
+</div>
+</div>
+<!-- Social Card 6 -->
+<div class="break-inside-avoid relative group">
+<div class="bg-primary p-2 rounded-lg thick-border transform -rotate-1 group-hover:rotate-0 transition-transform">
+<div class="bg-black text-primary p-6 flex flex-col items-center justify-center text-center aspect-square rounded-md">
+<span class="material-icons text-6xl mb-4">camera_alt</span>
+<p class="font-black uppercase text-xl">Tag us to be featured</p>
+<p class="font-bold text-sm mt-2">#DRINKWEIRD</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-background-dark border-t-4 border-black py-12">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2">
+<h4 class="text-4xl font-black uppercase italic mb-6">Drink Weird.</h4>
+<p class="font-bold text-lg mb-8 max-w-sm">The world is weird enough, your energy drink should be too. Pure, natural, and never boring.</p>
+<div class="flex gap-4">
+<div class="w-10 h-10 bg-black text-primary flex items-center justify-center rounded-full hover:scale-110 transition-transform cursor-pointer">
+<i class="material-icons text-sm">facebook</i>
+</div>
+<div class="w-10 h-10 bg-black text-primary flex items-center justify-center rounded-full hover:scale-110 transition-transform cursor-pointer">
+<i class="material-icons text-sm">camera_alt</i>
+</div>
+<div class="w-10 h-10 bg-black text-primary flex items-center justify-center rounded-full hover:scale-110 transition-transform cursor-pointer">
+<i class="material-icons text-sm">video_library</i>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-black uppercase mb-4">The Goods</h5>
+<ul class="space-y-2 font-bold uppercase text-sm">
+<li><a class="hover:underline" href="#">Shop Energy</a></li>
+<li><a class="hover:underline" href="#">Variety Packs</a></li>
+<li><a class="hover:underline" href="#">Merch</a></li>
+<li><a class="hover:underline" href="#">Subscriptions</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-black uppercase mb-4">Support</h5>
+<ul class="space-y-2 font-bold uppercase text-sm">
+<li><a class="hover:underline" href="#">FAQ</a></li>
+<li><a class="hover:underline" href="#">Shipping</a></li>
+<li><a class="hover:underline" href="#">Contact</a></li>
+<li><a class="hover:underline" href="#">Privacy</a></li>
+</ul>
+</div>
+</div>
+<div class="text-center mt-12 pt-8 border-t border-black/10">
+<p class="font-black uppercase text-xs opacity-50">© 2024 Drink Weird Inc. Stay Weird or Die Bored.</p>
+</div>
+</footer>
+</body></html>

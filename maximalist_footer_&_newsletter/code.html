@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maximalist Footer &amp; Newsletter | Drink Weird</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#63ed0c",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#172210",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+        .text-outline {
+            -webkit-text-stroke: 2px #63ed0c;
+            color: transparent;
+        }
+        .custom-border {
+            border: 4px solid #63ed0c;
+        }
+        .btn-hover:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px 0px #63ed0c;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<!-- Hero Content Spacer -->
+<div class="h-screen flex items-center justify-center bg-background-light dark:bg-background-dark">
+<div class="text-center">
+<h1 class="text-6xl font-black uppercase tracking-tighter text-background-dark dark:text-primary mb-4">The New Energy</h1>
+<p class="text-xl font-medium text-background-dark/60 dark:text-primary/60">Scroll down for the weirdness.</p>
+</div>
+</div>
+<!-- Maximalist Footer Section -->
+<footer class="bg-black text-primary overflow-hidden border-t-8 border-primary">
+<!-- Newsletter Signup Section -->
+<div class="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Large Catchphrase -->
+<div>
+<h2 class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter uppercase mb-6">
+                        Join the <br/> <span class="text-outline">Weirdos</span>
+</h2>
+<p class="text-xl md:text-2xl font-bold uppercase tracking-widest max-w-md">
+                        Get the latest drops, weird news, and early access to our wildest flavors.
+                    </p>
+</div>
+<!-- Signup Form -->
+<div class="relative">
+<form class="flex flex-col gap-6">
+<div class="relative group">
+<input class="w-full bg-black border-4 border-primary text-primary placeholder-primary/50 text-2xl font-black p-6 rounded-lg focus:ring-0 focus:outline-none focus:border-white transition-colors uppercase" placeholder="YOUR@EMAIL.COM" type="email"/>
+</div>
+<button class="w-full bg-primary text-black text-3xl font-black p-6 rounded-lg uppercase transition-all btn-hover active:translate-y-1 active:translate-x-1 active:shadow-none" type="submit">
+                            Grab the Can
+                        </button>
+</form>
+<div class="mt-8 flex gap-8 items-center">
+<span class="font-bold uppercase tracking-widest text-sm opacity-60">Follow the madness:</span>
+<div class="flex gap-6">
+<a class="text-4xl hover:scale-125 transition-transform" href="#"><span class="sr-only">Instagram</span><i class="material-icons text-4xl">podcasts</i></a>
+<a class="text-4xl hover:scale-125 transition-transform" href="#"><span class="sr-only">TikTok</span><i class="material-icons text-4xl">music_note</i></a>
+<a class="text-4xl hover:scale-125 transition-transform" href="#"><span class="sr-only">X</span><i class="material-icons text-4xl">bolt</i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Middle Links Section -->
+<div class="border-y-4 border-primary/30">
+<div class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left">
+<div class="col-span-2 md:col-span-1">
+<div class="text-4xl font-black uppercase mb-4 tracking-tighter">Drink<br/>Weird</div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-black uppercase tracking-widest text-white mb-2">Locate</span>
+<a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Store Locator</a>
+<a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Bulk Order</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-black uppercase tracking-widest text-white mb-2">Legal stuff</span>
+<a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Privacy</a>
+<a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Terms</a>
+<a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Accessibility</a>
+</div>
+<div class="flex flex-col gap-4 items-center md:items-end justify-center">
+<img class="w-32 h-32 rounded-full border-4 border-primary object-cover grayscale hover:grayscale-0 transition-all cursor-pointer" data-alt="Abstract vibrant green digital art piece" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn_J7ZNLW46ffRF-J_vQRPesq9XgtnZ4h0GDB-mbPDEmlwkLiptEoXvLJhB8WN65u-xztK0pdNd-m85GtljWlaSGD6YWWl1lye6-B4uC1mUJhF4wwnE9SCNBvtVRO5e_3koseMMWnHojHiFmZ3boC0gJBTZEE5oYt89OI9C3HCpScYZu03JyBCulmQIK-h3_PewZNIpYqKiqF-ZsOycnJYjCpey-Ciiqk1pcBjRKYa4-C2MlB3QmiUWFEprM5JqK8VncWz5BJKkBs"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Marquee Branding -->
+<div class="bg-primary text-black py-4 border-t-4 border-black select-none">
+<div class="animate-marquee flex items-center">
+<span class="text-4xl font-black uppercase mx-8">Stay Weird</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Drink Wild</span>
+<span class="text-4xl font-black uppercase mx-8">Repeat</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Stay Weird</span>
+<span class="text-4xl font-black uppercase mx-8">Drink Wild</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Repeat</span>
+<span class="text-4xl font-black uppercase mx-8">Stay Weird</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Drink Wild</span>
+<span class="text-4xl font-black uppercase mx-8">Repeat</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Stay Weird</span>
+<span class="text-4xl font-black uppercase mx-8">Drink Wild</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Repeat</span>
+<!-- Duplicate for seamless loop -->
+<span class="text-4xl font-black uppercase mx-8">Stay Weird</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Drink Wild</span>
+<span class="text-4xl font-black uppercase mx-8">Repeat</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Stay Weird</span>
+<span class="text-4xl font-black uppercase mx-8">Drink Wild</span>
+<span class="text-4xl font-black uppercase mx-8 text-outline" style="-webkit-text-stroke: 2px #000;">Repeat</span>
+</div>
+</div>
+<!-- Final Tiny Footer -->
+<div class="bg-black py-4 px-6 text-center">
+<p class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
+                © 2024 DRINK WEIRD CO. ALL RIGHTS RESERVED. NO REASON TO BE NORMAL.
+            </p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vibrant Product Collection | Energy Surge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#63ed0c",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#172210",
+                        "neon-cyan": "#00f0ff",
+                        "neon-magenta": "#ff00ff",
+                        "neon-yellow": "#fff000",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.chunky-shadow {
+    box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1)
+    }
+.chunky-shadow-sm {
+    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1)
+    }
+.text-outline {
+    -webkit-text-stroke: 2px black
+    }
+.doodle-float {
+    animation: floating 3s ease-in-out infinite
+    }
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px) rotate(0deg);
+        } 50% {
+        transform: translate(5px, -10px) rotate(5deg);
+        } 100% {
+        transform: translate(0, 0px) rotate(0deg);
+        }
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCRc8sFiHXSB1ZJhaI3BaXSkcdTOR4bIpyjyjq_tlcJhxkib068FgIDat0LG-eexEn8CKFenImpG21STaJXQ16ixJ0kmerEEwLZ5cuqqy7XiLoJ8PeS2eitAMIVJLxh5dJ-iY6ADPUOA1_iCrGIrv4H2iASgJ8vh7orZsiA9xkTPLE4r0hBwpyqW9Ew9bOaW47DPGHe1vytE_ZwLsIjgsITJ6jfMFamVlitXJtnmX3stXMez4fva0oD757qiEQ5cV4gqlK89Mzt5Rk);
+    pointer-events: none
+    }</style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300">
+<!-- Grain/Texture Overlay -->
+<div class="fixed inset-0 grain-overlay opacity-20 z-50"></div>
+<!-- Navigation -->
+<nav class="sticky top-0 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b-4 border-black px-6 py-4">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<div class="text-3xl font-black tracking-tighter italic">VIBE<span class="text-primary">DRINK</span></div>
+<div class="hidden md:flex space-x-8 font-extrabold uppercase text-sm tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Shop All</a>
+<a class="hover:text-primary transition-colors" href="#">Our Vibe</a>
+<a class="hover:text-primary transition-colors" href="#">Subscribers</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="bg-primary p-2 rounded-full border-2 border-black chunky-shadow-sm">
+<span class="material-icons text-black">shopping_cart</span>
+</button>
+<div class="bg-black text-white px-3 py-1 rounded-full font-black text-xs">3 ITEMS</div>
+</div>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative pt-16 pb-8 px-6 text-center overflow-hidden">
+<div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-neon-magenta/10 rounded-full blur-3xl"></div>
+<h1 class="text-7xl md:text-9xl font-black tracking-tighter uppercase mb-4 relative z-10 leading-none">
+                CHOOSE <br/> <span class="text-outline text-transparent">YOUR</span> <br/> <span class="bg-primary px-4 py-2 inline-block -rotate-2 transform">VIBE</span>
+</h1>
+<p class="max-w-xl mx-auto text-lg md:text-xl font-medium mt-6 leading-relaxed">
+                Zero sugar. Maximum chaos. Pure energy for the modern daydreamer. Pick your flavor and start the riot.
+            </p>
+</section>
+<!-- Product Grid Section -->
+<section class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Product Card: Cyan (Blueberry) -->
+<div class="group relative flex flex-col items-center">
+<!-- Doodle Overlays -->
+<span class="material-icons absolute -top-4 -left-4 text-5xl text-neon-cyan doodle-float" style="animation-delay: 0.2s;">waves</span>
+<span class="material-icons absolute top-20 -right-4 text-4xl text-black doodle-float" style="animation-delay: 0.5s;">bubble_chart</span>
+<div class="w-full bg-neon-cyan border-4 border-black rounded-xl p-8 pt-20 relative chunky-shadow flex flex-col items-center transition-transform hover:-translate-y-2">
+<div class="absolute -top-16 w-full flex justify-center transform group-hover:scale-110 transition-transform duration-300">
+<img class="h-64 object-contain drop-shadow-2xl" data-alt="3D blue energy drink can with lightning graphics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOByNYcn74ggdxsZqVxR2_cYGPAF6Q3K-ugoEV55zCtIbmE9lJFI60NSLfVXQ-D-7xPnLSQmOAgK3S82mHJBw-okhlnHTAiT7BYsKk4Ta8Oi-0_FidxW9bK-dMEmfD96CJfxdt7QrOrA3r1rXkxyaFaBrjqsLI9IuM6yugdOz0YC0aSDcLg7csN2bbOPdAdhA-_Dp8Eb2lLg0b0kwFLZbaJYYS3NjyhCRW7tCyMy3cXl9IJ9XlS1zfdBa3mx85WloQ4mgGHIap88"/>
+</div>
+<div class="mt-32 text-center w-full">
+<h3 class="text-4xl font-black italic tracking-tighter uppercase mb-1">THE FLOW</h3>
+<p class="text-black font-extrabold text-sm mb-6 uppercase tracking-widest opacity-80">Electric Blueberry</p>
+<div class="flex justify-between items-center bg-white/30 border-2 border-black p-3 rounded-lg mb-6">
+<span class="font-black text-xl">$3.99</span>
+<span class="text-xs font-black uppercase">12 FL OZ</span>
+</div>
+<button class="w-full bg-primary text-black font-black py-4 rounded-lg border-2 border-black chunky-shadow-sm group-hover:bg-white transition-colors flex items-center justify-center space-x-2">
+<span class="material-icons">bolt</span>
+<span>QUICK ADD</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card: Magenta (Citrus) -->
+<div class="group relative flex flex-col items-center">
+<!-- Doodle Overlays -->
+<span class="material-icons absolute top-10 -left-6 text-5xl text-neon-magenta doodle-float" style="animation-delay: 0.8s;">electric_bolt</span>
+<span class="material-icons absolute -bottom-4 -right-2 text-4xl text-black doodle-float" style="animation-delay: 0.1s;">star</span>
+<div class="w-full bg-neon-magenta border-4 border-black rounded-xl p-8 pt-20 relative chunky-shadow flex flex-col items-center transition-transform hover:-translate-y-2">
+<div class="absolute -top-16 w-full flex justify-center transform group-hover:scale-110 transition-transform duration-300">
+<img class="h-64 object-contain drop-shadow-2xl" data-alt="3D magenta energy drink can with doodle overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdhsOxvBu1COIo3Ka_pgDvaFe-yekdfNVwoGDRgP_XoJtT0liXzpF9qssbBxtf60LdP_ORIl0ER63bF7chV9NQrLIbcn2JjEfI9XjuIRCeXh0Xx4ztERGsG5W_16rRE3GT1SKxiG6n0GiTiWOIQl3EPnxh6tzKal6m8hvr5Nc2ExyyAQVxEWZsCfaKUY2Twqeapo4FfUI_s1W_ooOEXXENWR8_m_q4MLUxitVWmM7hXtk7l3Jaiq8RZKQd0-Pz4_pmSSKvvj_cMbE"/>
+</div>
+<div class="mt-32 text-center w-full">
+<h3 class="text-4xl font-black italic tracking-tighter uppercase mb-1">THE SPARK</h3>
+<p class="text-black font-extrabold text-sm mb-6 uppercase tracking-widest opacity-80">Neon Citrus</p>
+<div class="flex justify-between items-center bg-white/30 border-2 border-black p-3 rounded-lg mb-6">
+<span class="font-black text-xl">$3.99</span>
+<span class="text-xs font-black uppercase">12 FL OZ</span>
+</div>
+<button class="w-full bg-primary text-black font-black py-4 rounded-lg border-2 border-black chunky-shadow-sm group-hover:bg-white transition-colors flex items-center justify-center space-x-2">
+<span class="material-icons">bolt</span>
+<span>QUICK ADD</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card: Yellow (Tropical) -->
+<div class="group relative flex flex-col items-center">
+<!-- Doodle Overlays -->
+<span class="material-icons absolute top-20 -left-4 text-5xl text-black doodle-float" style="animation-delay: 1.2s;">auto_awesome</span>
+<span class="material-icons absolute -top-6 right-10 text-4xl text-neon-yellow doodle-float" style="animation-delay: 0.4s;">wb_sunny</span>
+<div class="w-full bg-neon-yellow border-4 border-black rounded-xl p-8 pt-20 relative chunky-shadow flex flex-col items-center transition-transform hover:-translate-y-2">
+<div class="absolute -top-16 w-full flex justify-center transform group-hover:scale-110 transition-transform duration-300">
+<img class="h-64 object-contain drop-shadow-2xl" data-alt="3D yellow energy drink can with tropical patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyF-VJM_wDUPDGxldwmzKIRoPD638z5iEEvPTPer1OlGZHLwmBt1lXqLD3Fzca0Zw4ZzGKMucEcpPwlO7XQ0nj2gDSLQehENf0FVDnSTDW4l3kc8Eksj-V2586DzgJ94-H7K5XlBhPSAND60r1dxKGGPyFSUT3tymR7WcOlorHO9c_ULSdvdntPR_HPaamEiBBI-i6LxJq6AuUz39CaBjx45N0uDEA-V3WYY-ghyW5nAWclYYaYRLKg84GrqOfJnDq-emmPqTe2QQ"/>
+</div>
+<div class="mt-32 text-center w-full">
+<h3 class="text-4xl font-black italic tracking-tighter uppercase mb-1">THE SURGE</h3>
+<p class="text-black font-extrabold text-sm mb-6 uppercase tracking-widest opacity-80">Tropical Hype</p>
+<div class="flex justify-between items-center bg-white/30 border-2 border-black p-3 rounded-lg mb-6">
+<span class="font-black text-xl">$3.99</span>
+<span class="text-xs font-black uppercase">12 FL OZ</span>
+</div>
+<button class="w-full bg-primary text-black font-black py-4 rounded-lg border-2 border-black chunky-shadow-sm group-hover:bg-white transition-colors flex items-center justify-center space-x-2">
+<span class="material-icons">bolt</span>
+<span>QUICK ADD</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="max-w-7xl mx-auto px-6 mb-24">
+<div class="bg-black text-white p-12 rounded-xl flex flex-col md:flex-row items-center justify-between border-4 border-primary chunky-shadow">
+<div class="mb-8 md:mb-0 md:mr-8 text-center md:text-left">
+<h2 class="text-5xl font-black tracking-tighter uppercase mb-2">JOIN THE CHAOS</h2>
+<p class="text-primary font-bold uppercase tracking-widest">Get drops first. No spam. Just vibes.</p>
+</div>
+<form class="flex w-full md:w-auto space-x-2">
+<input class="bg-transparent border-2 border-white rounded-lg px-6 py-4 font-black focus:border-primary focus:ring-0 w-full md:w-72" placeholder="YOUR EMAIL" type="email"/>
+<button class="bg-primary text-black font-black px-8 py-4 rounded-lg border-2 border-black chunky-shadow-sm whitespace-nowrap">JOIN</button>
+</form>
+</div>
+</section>
+<!-- Social Proof Grid -->
+<section class="bg-primary py-12 border-y-4 border-black -rotate-1 w-[110%] -ml-[5%] mb-20">
+<div class="flex animate-scroll whitespace-nowrap overflow-hidden">
+<div class="flex space-x-20 text-4xl font-black text-black uppercase tracking-tighter">
+<span>AS SEEN ON THE STREETS</span>
+<span>•</span>
+<span>100% NATURAL CAFFEINE</span>
+<span>•</span>
+<span>NO BS INGREDIENTS</span>
+<span>•</span>
+<span>DRINK WEIRD BE HAPPY</span>
+<span>•</span>
+<span>AS SEEN ON THE STREETS</span>
+<span>•</span>
+<span>100% NATURAL CAFFEINE</span>
+<span>•</span>
+<span>NO BS INGREDIENTS</span>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-light dark:bg-background-dark py-20 px-6 border-t-4 border-black">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="col-span-2">
+<div class="text-5xl font-black tracking-tighter italic mb-6">VIBE<span class="text-primary">DRINK</span></div>
+<p class="max-w-md font-bold text-lg leading-snug">The only drink that matches your energy levels at 3 AM. Made for the creators, the doers, and the ones who never sleep.</p>
+</div>
+<div>
+<h4 class="font-black text-xl mb-4 uppercase">Support</h4>
+<ul class="space-y-2 font-bold opacity-70">
+<li><a class="hover:text-primary" href="#">Shipping</a></li>
+<li><a class="hover:text-primary" href="#">Returns</a></li>
+<li><a class="hover:text-primary" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-black text-xl mb-4 uppercase">Socials</h4>
+<ul class="space-y-2 font-bold opacity-70">
+<li><a class="hover:text-primary" href="#">Instagram</a></li>
+<li><a class="hover:text-primary" href="#">TikTok</a></li>
+<li><a class="hover:text-primary" href="#">Twitter</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t-2 border-black/10 flex justify-between items-center text-xs font-black uppercase tracking-widest">
+<p>© 2024 VIBE DRINK CORP. ALL RIGHTS RESERVED.</p>
+<p>DESIGNED FOR THE WEIRD</p>
+</div>
+</footer>
+</body></html>

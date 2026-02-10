@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GET WEIRD | The High-Energy Beverage</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#63ed0c",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#172210",
+                        "electric-purple": "#8b5cf6",
+                        "neon-cyan": "#00f0ff",
+                        "neon-magenta": "#ff00ff",
+                        "neon-yellow": "#fff000",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "brutal": "8px 8px 0px 0px rgba(0,0,0,1)",
+                        "brutal-sm": "4px 4px 0px 0px rgba(0,0,0,1)",
+                        "brutal-hover": "2px 2px 0px 0px rgba(0,0,0,1)",
+                        "chunky-shadow": "8px 8px 0 0 rgba(0, 0, 0, 1)",
+                        "chunky-shadow-sm": "4px 4px 0 0 rgba(0, 0, 0, 1)"
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .psychedelic-bg {
+            background: linear-gradient(45deg, #63ed0c 25%, #8b5cf6 50%, #63ed0c 75%);
+            background-size: 400% 400%;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 2px black;
+            color: transparent;
+        }
+
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .chunky-shadow {
+            box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1)
+        }
+
+        .chunky-shadow-sm {
+            box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1)
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 2px black
+        }
+
+        .doodle-float {
+            animation: floating 3s ease-in-out infinite
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(5px, -10px) rotate(5deg);
+            }
+
+            100% {
+                transform: translate(0, 0px) rotate(0deg);
+            }
+        }
+
+        .grain-overlay {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCRc8sFiHXSB1ZJhaI3BaXSkcdTOR4bIpyjyjq_tlcJhxkib068FgIDat0LG-eexEn8CKFenImpG21STaJXQ16ixJ0kmerEEwLZ5cuqqy7XiLoJ8PeS2eitAMIVJLxh5dJ-iY6ADPUOA1_iCrGIrv4H2iASgJ8vh7orZsiA9xkTPLE4r0hBwpyqW9Ew9bOaW47DPGHe1vytE_ZwLsIjgsITJ6jfMFamVlitXJtnmX3stXMez4fva0oD757qiEQ5cV4gqlK89Mzt5Rk);
+            pointer-events: none
+        }
+
+        .grainy-overlay {
+            position: relative;
+        }
+
+        .grainy-overlay::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.04;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 50;
+        }
+
+        .thick-border {
+            border: 3px solid #000;
+        }
+
+        .neo-shadow {
+            box-shadow: 6px 6px 0px 0px #000;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .hover-lift:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px 0px #000;
+        }
+
+        .rotate-weird-ccw {
+            transform: rotate(-1.5deg);
+        }
+
+        .rotate-weird-cw {
+            transform: rotate(1.2deg);
+        }
+
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 2px #63ed0c;
+            color: transparent;
+        }
+
+        .custom-border {
+            border: 4px solid #63ed0c;
+        }
+
+        .btn-hover:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px 0px #63ed0c;
+        }
+
+
+
+        html.lenis,
+        html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl z-50">
+        <nav
+            class="bg-white border-4 border-black rounded-xl px-6 py-4 flex items-center justify-between shadow-brutal">
+            <div class="flex items-center gap-2">
+                <div class="bg-primary w-10 h-10 rounded-full border-2 border-black flex items-center justify-center">
+                    <span class="material-icons text-black font-black">bolt</span>
+                </div>
+                <span class="text-2xl font-black tracking-tighter italic">WEIRD.</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-bold text-sm uppercase tracking-widest">
+                <a class="hover:text-primary transition-colors" href="#">Drinks</a>
+                <a class="hover:text-primary transition-colors" href="#">Philosophy</a>
+                <a class="hover:text-primary transition-colors" href="#">Find Us</a>
+                <a class="hover:text-primary transition-colors text-electric-purple" href="#">Merch</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-primary border-2 border-black p-2 rounded-lg hover:shadow-brutal-sm transition-all active:translate-x-1 active:translate-y-1">
+                    <span class="material-icons">shopping_bag</span>
+                </button>
+                <button class="md:hidden">
+                    <span class="material-icons text-3xl">menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <main class="relative min-h-screen flex flex-col items-center justify-center pt-24 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <div class="psychedelic-bg absolute inset-0"></div>
+            <!-- Decorative "Weird" floating text -->
+            <div class="absolute top-1/4 -left-20 rotate-12 opacity-10">
+                <h2 class="text-[12rem] font-black leading-none text-stroke">WEIRD</h2>
+            </div>
+            <div class="absolute bottom-1/4 -right-20 -rotate-12 opacity-10">
+                <h2 class="text-[12rem] font-black leading-none text-stroke">WIRED</h2>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
+            <!-- Headline -->
+            <div class="text-center mb-8 relative">
+                <span
+                    class="inline-block bg-electric-purple text-white font-black px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4 border-2 border-black shadow-brutal-sm">New
+                    Flavor: Radioactive Grape</span>
+                <h1 class="text-7xl md:text-[10rem] font-black leading-[0.8] tracking-tighter text-black uppercase">
+                    GET <span class="text-primary italic">WEIRD</span><br />
+                    STAY <span class="relative">WIRED
+                        <svg class="absolute -bottom-4 left-0 w-full h-8 text-primary" preserveaspectratio="none"
+                            viewbox="0 0 100 20">
+                            <path d="M0,10 Q25,20 50,10 T100,10" fill="none" stroke="currentColor" stroke-width="6">
+                            </path>
+                        </svg>
+                    </span>
+                </h1>
+            </div>
+            <!-- Product Showcase Area -->
+            <div class="relative w-full max-w-2xl h-[500px] flex items-center justify-center">
+                <!-- Floating Badges -->
+                <div
+                    class="absolute top-10 left-0 bg-white border-2 border-black p-4 rounded-xl rotate-[-15deg] shadow-brutal-sm z-20">
+                    <p class="font-black text-xs uppercase leading-none">Caffeine<br /><span
+                            class="text-3xl text-primary">200MG</span></p>
+                </div>
+                <div
+                    class="absolute bottom-20 right-0 bg-white border-2 border-black p-4 rounded-xl rotate-[10deg] shadow-brutal-sm z-20">
+                    <p class="font-black text-xs uppercase leading-none">Sugar<br /><span
+                            class="text-3xl text-electric-purple">ZERO</span></p>
+                </div>
+                <!-- 3D Can Render -->
+                <div
+                    class="relative w-64 h-full md:w-80 transition-transform duration-500 hover:scale-105 cursor-pointer">
+                    <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110"></div>
+                    <img alt="Weird Energy Can"
+                        class="w-full h-full object-contain relative z-10 drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]"
+                        data-alt="Modern neon green energy drink can 3D render"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR4yvXc5NBMx8uL2n30uvUZHHRE9BpcH9Vi2hH8jr-YBWBqf8Kbykhn6eYhKNRZ_-5BpD2WhZuAr-yI19WGF4d9fA0wfcILnXq6mrSNryg5sKzXsyqBeEZxeHRs3-ZZJ5VRMbAQw34K048hFHDwkdC-E6VmpoZhRSL6dp9BTGkT20Dx7e8DbymgqVmLLlpT7jlX6YqT1lBk7dJQm3ug0JqHdw_uBULyrZBzFSEuXH32ehEXLxHFhsniY2oNAH5YovA-o960lQU0Ew" />
+                </div>
+            </div>
+            <!-- CTA Button -->
+            <div class="mt-8">
+                <button
+                    class="group relative inline-flex items-center gap-4 bg-primary text-black font-black text-2xl md:text-4xl px-12 py-6 rounded-2xl border-4 border-black shadow-brutal hover:shadow-brutal-hover hover:translate-x-1 hover:translate-y-1 transition-all">
+                    SHOP THE CHAOS
+                    <span
+                        class="material-icons text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Scrolling Ticker -->
+    <section class="bg-black py-6 border-y-4 border-black overflow-hidden transform -rotate-1 w-[110%] -ml-[5%]">
+        <div class="ticker-wrap">
+            <div class="ticker-content flex items-center">
+                <!-- Set 1 -->
+                <div class="flex items-center gap-12 shrink-0 pr-12">
+                    <span class="text-primary text-4xl font-black italic flex items-center gap-4">
+                        <span class="material-icons text-4xl">star</span> NO FILLERS
+                    </span>
+                    <span class="text-white text-4xl font-black italic flex items-center gap-4">
+                        <span class="material-icons text-4xl text-electric-purple">flash_on</span> MAXIMUM BRAIN POWER
+                    </span>
+                    <span class="text-primary text-4xl font-black italic flex items-center gap-4">
+                        <span class="material-icons text-4xl">psychology</span> EMBRACE THE STRANGE
+                    </span>
+                    <span class="text-white text-4xl font-black italic flex items-center gap-4">
+                        <span class="material-icons text-4xl text-electric-purple">eco</span> PLANT POWERED
+                    </span>
+                </div>
+                <!-- Set 2 (Duplicate) -->
+                <div class="flex items-center gap-12 shrink-0 pr-12" aria-hidden="true">
+                    <span class="text-primary text-4xl font-black italic flex items-center gap-4">
+                        <span class="material-icons text-4xl">star</span> NO FILLERS
+                    </span>
+                    <span class="text-white text-4xl font-black italic flex items-center gap-4">
+                        <span class="material-icons text-4xl text-electric-purple">flash_on</span> MAXIMUM BRAIN POWER
+                    </span>
+                    <span class="text-primary text-4xl font-black italic flex items-center gap-4">
+                        <span class="material-icons text-4xl">psychology</span> EMBRACE THE STRANGE
+                    </span>
+                    <span class="text-white text-4xl font-black italic flex items-center gap-4">
+                        <span class="material-icons text-4xl text-electric-purple">eco</span> PLANT POWERED
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content Sections Teaser -->
+    <section class="py-24 container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+                class="bg-white border-4 border-black p-8 rounded-2xl shadow-brutal hover:scale-[1.02] transition-transform group">
+                <div
+                    class="w-16 h-16 bg-primary border-2 border-black rounded-xl mb-6 flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform">
+                    <span class="material-icons text-3xl">local_fire_department</span>
+                </div>
+                <h3 class="text-2xl font-black mb-4">FRUIT CHAOS</h3>
+                <p class="text-slate-600 font-medium">A blend of exotic fruits that shouldn't exist in nature but do in
+                    this can.</p>
+            </div>
+            <div
+                class="bg-white border-4 border-black p-8 rounded-2xl shadow-brutal hover:scale-[1.02] transition-transform group md:-translate-y-8">
+                <div
+                    class="w-16 h-16 bg-electric-purple border-2 border-black rounded-xl mb-6 flex items-center justify-center -rotate-6 group-hover:rotate-0 transition-transform">
+                    <span class="material-icons text-3xl text-white">science</span>
+                </div>
+                <h3 class="text-2xl font-black mb-4">BIO-HACKED</h3>
+                <p class="text-slate-600 font-medium">Crafted by scientists who haven't slept since 2019. Just for you.
+                </p>
+            </div>
+            <div
+                class="bg-white border-4 border-black p-8 rounded-2xl shadow-brutal hover:scale-[1.02] transition-transform group">
+                <div
+                    class="w-16 h-16 bg-primary border-2 border-black rounded-xl mb-6 flex items-center justify-center rotate-6 group-hover:rotate-[-12deg] transition-transform">
+                    <span class="material-icons text-3xl">public</span>
+                </div>
+                <h3 class="text-2xl font-black mb-4">RECYCLED DNA</h3>
+                <p class="text-slate-600 font-medium">100% recyclable cans because we care about the planet we're taking
+                    over.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Hero Section -->
+    <section class="relative pt-16 pb-8 px-6 text-center overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-neon-magenta/10 rounded-full blur-3xl"></div>
+        <h1 class="text-7xl md:text-9xl font-black tracking-tighter uppercase mb-4 relative z-10 leading-none">
+            CHOOSE <br /> <span class="text-outline text-transparent">YOUR</span> <br /> <span
+                class="bg-primary px-4 py-2 inline-block -rotate-2 transform">VIBE</span>
+        </h1>
+        <p class="max-w-xl mx-auto text-lg md:text-xl font-medium mt-6 leading-relaxed">
+            Zero sugar. Maximum chaos. Pure energy for the modern daydreamer. Pick your flavor and start the riot.
+        </p>
+    </section>
+    <!-- Product Grid Section -->
+    <section class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Product Card: Cyan (Blueberry) -->
+        <div class="group relative flex flex-col items-center">
+            <!-- Doodle Overlays -->
+            <span class="material-icons absolute -top-4 -left-4 text-5xl text-neon-cyan doodle-float"
+                style="animation-delay: 0.2s;">waves</span>
+            <span class="material-icons absolute top-20 -right-4 text-4xl text-black doodle-float"
+                style="animation-delay: 0.5s;">bubble_chart</span>
+            <div
+                class="w-full bg-neon-cyan border-4 border-black rounded-xl p-8 pt-20 relative chunky-shadow flex flex-col items-center transition-transform hover:-translate-y-2">
+                <div
+                    class="absolute -top-16 w-full flex justify-center transform group-hover:scale-110 transition-transform duration-300">
+                    <img class="h-64 object-contain drop-shadow-2xl"
+                        data-alt="3D blue energy drink can with lightning graphics"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOByNYcn74ggdxsZqVxR2_cYGPAF6Q3K-ugoEV55zCtIbmE9lJFI60NSLfVXQ-D-7xPnLSQmOAgK3S82mHJBw-okhlnHTAiT7BYsKk4Ta8Oi-0_FidxW9bK-dMEmfD96CJfxdt7QrOrA3r1rXkxyaFaBrjqsLI9IuM6yugdOz0YC0aSDcLg7csN2bbOPdAdhA-_Dp8Eb2lLg0b0kwFLZbaJYYS3NjyhCRW7tCyMy3cXl9IJ9XlS1zfdBa3mx85WloQ4mgGHIap88" />
+                </div>
+                <div class="mt-32 text-center w-full">
+                    <h3 class="text-4xl font-black italic tracking-tighter uppercase mb-1">THE FLOW</h3>
+                    <p class="text-black font-extrabold text-sm mb-6 uppercase tracking-widest opacity-80">Electric
+                        Blueberry</p>
+                    <div
+                        class="flex justify-between items-center bg-white/30 border-2 border-black p-3 rounded-lg mb-6">
+                        <span class="font-black text-xl">$3.99</span>
+                        <span class="text-xs font-black uppercase">12 FL OZ</span>
+                    </div>
+                    <button
+                        class="w-full bg-primary text-black font-black py-4 rounded-lg border-2 border-black chunky-shadow-sm group-hover:bg-white transition-colors flex items-center justify-center space-x-2">
+                        <span class="material-icons">bolt</span>
+                        <span>QUICK ADD</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Product Card: Magenta (Citrus) -->
+        <div class="group relative flex flex-col items-center">
+            <!-- Doodle Overlays -->
+            <span class="material-icons absolute top-10 -left-6 text-5xl text-neon-magenta doodle-float"
+                style="animation-delay: 0.8s;">electric_bolt</span>
+            <span class="material-icons absolute -bottom-4 -right-2 text-4xl text-black doodle-float"
+                style="animation-delay: 0.1s;">star</span>
+            <div
+                class="w-full bg-neon-magenta border-4 border-black rounded-xl p-8 pt-20 relative chunky-shadow flex flex-col items-center transition-transform hover:-translate-y-2">
+                <div
+                    class="absolute -top-16 w-full flex justify-center transform group-hover:scale-110 transition-transform duration-300">
+                    <img class="h-64 object-contain drop-shadow-2xl"
+                        data-alt="3D magenta energy drink can with doodle overlays"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdhsOxvBu1COIo3Ka_pgDvaFe-yekdfNVwoGDRgP_XoJtT0liXzpF9qssbBxtf60LdP_ORIl0ER63bF7chV9NQrLIbcn2JjEfI9XjuIRCeXh0Xx4ztERGsG5W_16rRE3GT1SKxiG6n0GiTiWOIQl3EPnxh6tzKal6m8hvr5Nc2ExyyAQVxEWZsCfaKUY2Twqeapo4FfUI_s1W_ooOEXXENWR8_m_q4MLUxitVWmM7hXtk7l3Jaiq8RZKQd0-Pz4_pmSSKvvj_cMbE" />
+                </div>
+                <div class="mt-32 text-center w-full">
+                    <h3 class="text-4xl font-black italic tracking-tighter uppercase mb-1">THE SPARK</h3>
+                    <p class="text-black font-extrabold text-sm mb-6 uppercase tracking-widest opacity-80">Neon Citrus
+                    </p>
+                    <div
+                        class="flex justify-between items-center bg-white/30 border-2 border-black p-3 rounded-lg mb-6">
+                        <span class="font-black text-xl">$3.99</span>
+                        <span class="text-xs font-black uppercase">12 FL OZ</span>
+                    </div>
+                    <button
+                        class="w-full bg-primary text-black font-black py-4 rounded-lg border-2 border-black chunky-shadow-sm group-hover:bg-white transition-colors flex items-center justify-center space-x-2">
+                        <span class="material-icons">bolt</span>
+                        <span>QUICK ADD</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Product Card: Yellow (Tropical) -->
+        <div class="group relative flex flex-col items-center">
+            <!-- Doodle Overlays -->
+            <span class="material-icons absolute top-20 -left-4 text-5xl text-black doodle-float"
+                style="animation-delay: 1.2s;">auto_awesome</span>
+            <span class="material-icons absolute -top-6 right-10 text-4xl text-neon-yellow doodle-float"
+                style="animation-delay: 0.4s;">wb_sunny</span>
+            <div
+                class="w-full bg-neon-yellow border-4 border-black rounded-xl p-8 pt-20 relative chunky-shadow flex flex-col items-center transition-transform hover:-translate-y-2">
+                <div
+                    class="absolute -top-16 w-full flex justify-center transform group-hover:scale-110 transition-transform duration-300">
+                    <img class="h-64 object-contain drop-shadow-2xl"
+                        data-alt="3D yellow energy drink can with tropical patterns"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyF-VJM_wDUPDGxldwmzKIRoPD638z5iEEvPTPer1OlGZHLwmBt1lXqLD3Fzca0Zw4ZzGKMucEcpPwlO7XQ0nj2gDSLQehENf0FVDnSTDW4l3kc8Eksj-V2586DzgJ94-H7K5XlBhPSAND60r1dxKGGPyFSUT3tymR7WcOlorHO9c_ULSdvdntPR_HPaamEiBBI-i6LxJq6AuUz39CaBjx45N0uDEA-V3WYY-ghyW5nAWclYYaYRLKg84GrqOfJnDq-emmPqTe2QQ" />
+                </div>
+                <div class="mt-32 text-center w-full">
+                    <h3 class="text-4xl font-black italic tracking-tighter uppercase mb-1">THE SURGE</h3>
+                    <p class="text-black font-extrabold text-sm mb-6 uppercase tracking-widest opacity-80">Tropical Hype
+                    </p>
+                    <div
+                        class="flex justify-between items-center bg-white/30 border-2 border-black p-3 rounded-lg mb-6">
+                        <span class="font-black text-xl">$3.99</span>
+                        <span class="text-xs font-black uppercase">12 FL OZ</span>
+                    </div>
+                    <button
+                        class="w-full bg-primary text-black font-black py-4 rounded-lg border-2 border-black chunky-shadow-sm group-hover:bg-white transition-colors flex items-center justify-center space-x-2">
+                        <span class="material-icons">bolt</span>
+                        <span>QUICK ADD</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Grid -->
+    <section class="bg-primary py-12 border-y-4 border-black -rotate-1 w-[110%] -ml-[5%] mb-20">
+        <div class="flex animate-scroll whitespace-nowrap overflow-hidden">
+            <div class="flex space-x-20 text-4xl font-black text-black uppercase tracking-tighter">
+                <span>AS SEEN ON THE STREETS</span>
+                <span>•</span>
+                <span>100% NATURAL CAFFEINE</span>
+                <span>•</span>
+                <span>NO BS INGREDIENTS</span>
+                <span>•</span>
+                <span>DRINK WEIRD BE HAPPY</span>
+                <span>•</span>
+                <span>AS SEEN ON THE STREETS</span>
+                <span>•</span>
+                <span>100% NATURAL CAFFEINE</span>
+                <span>•</span>
+                <span>NO BS INGREDIENTS</span>
+            </div>
+        </div>
+    </section>
+    </main>
+
+
+    <!-- Hero Ticker -->
+    <div class="bg-primary border-b-4 border-black py-4 overflow-hidden select-none">
+        <div class="flex animate-marquee whitespace-nowrap">
+            <div class="flex shrink-0 px-4 gap-4">
+                <span class="text-2xl font-black uppercase italic">No Sugar • All Energy • Stay Weird • 100% Recyclable
+                    • Natural Caffeine • </span>
+                <span class="text-2xl font-black uppercase italic">No Sugar • All Energy • Stay Weird • 100% Recyclable
+                    • Natural Caffeine • </span>
+            </div>
+            <div class="flex shrink-0 px-4 gap-4" aria-hidden="true">
+                <span class="text-2xl font-black uppercase italic">No Sugar • All Energy • Stay Weird • 100% Recyclable
+                    • Natural Caffeine • </span>
+                <span class="text-2xl font-black uppercase italic">No Sugar • All Energy • Stay Weird • 100% Recyclable
+                    • Natural Caffeine • </span>
+            </div>
+        </div>
+    </div>
+    <!-- The Weird Way Section -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+        <div class="mb-12">
+            <h2 class="text-7xl md:text-9xl font-black uppercase leading-none tracking-tighter mb-4">
+                The <span class="text-primary italic">Weird</span><br />Way.
+            </h2>
+            <p class="text-xl md:text-2xl font-medium max-w-2xl leading-tight">
+                We aren't your typical jitter juice. We craft energy for the bold, the outliers, and the ones who never
+                sit still.
+            </p>
+        </div>
+        <!-- Bento Grid Philosophy -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Ingredient Card: No Sugar -->
+            <div
+                class="md:col-span-8 bg-white dark:bg-zinc-900 thick-border rounded-xl p-8 hover-lift transition-all relative overflow-hidden group">
+                <div class="relative z-10">
+                    <span
+                        class="bg-black text-primary px-3 py-1 font-black uppercase text-xs rounded-full">Ingredients</span>
+                    <h3 class="text-6xl font-black uppercase mt-4 mb-2">0g Sugar</h3>
+                    <p class="text-lg font-bold max-w-md">Sweetened with monk fruit and pure vibes. No crash, just
+                        sustained energy to keep you moving through the madness.</p>
+                </div>
+                <img class="absolute top-0 right-0 h-full w-1/2 object-cover opacity-20 group-hover:opacity-40 transition-opacity grayscale group-hover:grayscale-0"
+                    data-alt="Abstract vibrant green splashes on black background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxccnUX43rQIwzmv8P8tsqQzjoweSxQfGSyW5kRC_yxqeep1R-g0QMTrOCdO72zsYvK8CIM4iYunyrZ68MfTiRIPlqc8y050UQespjMtneqGYXuz2sYbWSU8eWiIb4e6cQCj8YX81I2VWSt3d9nDgACm61rfZl81dt7YDMnJvP0STdwEcxxLv37dy69oos_rzwUUkS60VS5qFWc_P8se8c2Wefokn-aCVvDp11M19bBUSxVh9mgU0Y_FAFDtd2GmVI1ag7LpsyVF8" />
+            </div>
+            <!-- Ingredient Card: Natural Caffeine -->
+            <div
+                class="md:col-span-4 bg-primary thick-border rounded-xl p-8 hover-lift transition-all flex flex-col justify-between rotate-weird-cw">
+                <div>
+                    <span class="bg-black text-white px-3 py-1 font-black uppercase text-xs rounded-full">Power</span>
+                    <h3 class="text-4xl font-black uppercase mt-4">Natural Caffeine</h3>
+                </div>
+                <div class="mt-8">
+                    <span class="material-icons text-7xl">bolt</span>
+                    <p class="font-black mt-4 uppercase">Sourced from Organic Green Tea.</p>
+                </div>
+            </div>
+            <!-- Ingredient Card: Recyclable -->
+            <div
+                class="md:col-span-4 bg-zinc-200 dark:bg-zinc-800 thick-border rounded-xl p-8 hover-lift transition-all flex flex-col justify-between rotate-weird-ccw">
+                <h3 class="text-4xl font-black uppercase">Infinite Loop</h3>
+                <div class="space-y-4">
+                    <p class="font-bold">Our cans are 100% recyclable, 100% of the time. Drink, crush, repeat.</p>
+                    <div class="w-16 h-16 border-4 border-black rounded-full flex items-center justify-center">
+                        <span class="material-icons text-4xl">recycling</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Philosophy Card: The Ethics -->
+            <div
+                class="md:col-span-8 bg-white dark:bg-zinc-900 thick-border rounded-xl p-8 hover-lift transition-all relative overflow-hidden">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-4xl font-black uppercase mb-4 italic">Built Different.</h3>
+                        <p class="font-bold text-lg mb-6">We prioritize people over profits, sustainability over
+                            shortcuts, and weirdness over vanilla everything.</p>
+                        <button
+                            class="bg-black text-primary px-8 py-3 font-black uppercase rounded-full hover:scale-105 transition-transform">
+                            Read Our Manifesto
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary/20 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+                            <span class="font-black text-2xl italic">1%</span>
+                            <span class="text-[10px] uppercase font-bold">For the Planet</span>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+                            <span class="font-black text-2xl italic">Vegan</span>
+                            <span class="text-[10px] uppercase font-bold">Plant Based</span>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+                            <span class="font-black text-2xl italic">GMO</span>
+                            <span class="text-[10px] uppercase font-bold">Free Energy</span>
+                        </div>
+                        <div class="bg-primary/20 p-4 rounded-lg flex flex-col items-center justify-center text-center">
+                            <span class="font-black text-2xl italic">B-Corp</span>
+                            <span class="text-[10px] uppercase font-bold">Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Community Section / Social Wall -->
+    <section class="bg-black py-24 relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div>
+                    <h2 class="text-primary text-6xl md:text-8xl font-black uppercase italic leading-none">
+                        The<br />Weirdos.</h2>
+                    <p class="text-white text-xl font-bold mt-4 uppercase tracking-widest">Community tagged #GETWEIRD
+                    </p>
+                </div>
+                <button
+                    class="bg-primary thick-border neo-shadow px-10 py-4 font-black uppercase text-xl hover:translate-y-1 hover:shadow-none transition-all">
+                    Join the Cult
+                </button>
+            </div>
+            <!-- Masonry Social Wall -->
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                <!-- Social Card 1 -->
+                <div class="break-inside-avoid relative group">
+                    <div
+                        class="bg-white p-2 rounded-lg thick-border transform -rotate-1 group-hover:rotate-0 transition-transform">
+                        <img class="w-full h-auto rounded-md grayscale hover:grayscale-0 transition-all duration-500"
+                            data-alt="High energy person skateboarding on urban street"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcVCCQJp-Dato8_-_DyX1uUfrzbSwbx1qVDBn5FOUEPPjtadeXwLtStbLcSkApdG_3AC6IdbKGGwcDmhCOgAfTwxPoh55d_hvx06mH6KmqqGXj0tt560wiPe26AZsMhco168gFkdKkyQ_9OKH5wks70R4D355SRE3oyx3YqIm-BKtzpPYyfreuTrHKHfW5O79faJYAfPIBQtnPeyKr7SpP189Nk9iPrIvaVQc9xKzCqdL4dVU9H17hb7SvsOAj0X85V7Fr1H0jnFc" />
+                        <div class="p-4 bg-white text-black">
+                            <p class="font-black uppercase text-sm">@shred_master_99</p>
+                            <p class="text-xs font-bold mt-1 text-zinc-600 italic">Fueling the midnight session.
+                                #GETWEIRD</p>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -top-4 -right-4 bg-primary rounded-full w-12 h-12 flex items-center justify-center thick-border font-black text-xl rotate-12">
+                        ★</div>
+                </div>
+                <!-- Social Card 2 -->
+                <div class="break-inside-avoid relative group">
+                    <div
+                        class="bg-white p-2 rounded-lg thick-border transform rotate-2 group-hover:rotate-0 transition-transform">
+                        <img class="w-full h-auto rounded-md grayscale hover:grayscale-0 transition-all duration-500"
+                            data-alt="Athletic person performing intense yoga outdoors"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuABE5FcKicFkdmlSlc-NmaTKcSFZu3IauwT7Me02cK09Nhb2HWC_RLxPmR8-dmoZboDa-92SMy_XA3DetktO-PR4CAwqxW_6R7SqlPPMD0a7m6RCNZ7jaXlJBZnR8PPWCd0WXrmSb79mfy6ExuoIQLulDpMYpO323ykHDOSHd_D1W2RM33fz0MJePeVmCPu2c3orf83JX85-wfbcjDkKqwTVAlwf6FfuC9rVVrxoP1wIIhLjM_fK9BsVS3tFI65Ac7jdIbE_CS3tsg" />
+                        <div class="p-4 bg-white text-black">
+                            <p class="font-black uppercase text-sm">@yogi_flow_state</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Card 3 -->
+                <div class="break-inside-avoid relative group">
+                    <div
+                        class="bg-white p-2 rounded-lg thick-border transform -rotate-2 group-hover:rotate-0 transition-transform">
+                        <img class="w-full h-auto rounded-md grayscale hover:grayscale-0 transition-all duration-500"
+                            data-alt="Powerlifter screaming mid lift in dark gym"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaaDFJxG_VWC7ErQ-LSMYs6mtqwcngrJGnIkbcB7QEfuwoEhI2HDKQmd3vDdF85jAZjy3nx8rtk5vZSA7ftL0zbecrzWabo7fXsAP8XmfBMgwHOkltCBrHxgSRRIBx3_TKjSGSpKqd3lT0XcBiNeiOJ938LZIffwq_2TYrBvpafxi6fD8dXBzQOKCXP_xFYL9jSpHip8V4W8YOI09-nkfgJPqSfJ-LsA1A4TMthnF0ndSp72j7JOLd0yziXZV5Jz-IBgyQNwHyDqs" />
+                        <div class="p-4 bg-white text-black">
+                            <p class="font-black uppercase text-sm">@bulk_king</p>
+                            <p class="text-xs font-bold mt-1 text-zinc-600 italic">Clean caffeine for heavy sets.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Card 4 -->
+                <div class="break-inside-avoid relative group">
+                    <div
+                        class="bg-white p-2 rounded-lg thick-border transform rotate-1 group-hover:rotate-0 transition-transform">
+                        <div class="aspect-square bg-zinc-900 flex items-center justify-center p-8 overflow-hidden">
+                            <img class="w-full h-full object-cover rounded-md opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all"
+                                data-alt="Dynamic shot of a runner at dusk"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKWx2zJIaaRMXccGXDyliJe49n8iOALEO1Fp6bHy2CXXM6oSlaJr_FhC7Rq3sUoCLQLkG1TipwKc7emaxNTCvtNtcxvAyHVQDn6dwSsl3PaR4oFpHt25BjeAVbm6tYbn9imouRPVCkpMqB3-gux6d_Mk_Oshb2sjrjLauPYTQggRFRtt8a-cwhxZEQH15nT6fHFyC7hXJD5HNAjITPooyYhgiP5i5o-4fJJV5fUPkcNjuNgxFnEgeskFNuf0ZXHW5tCxsnGxT_B6o" />
+                        </div>
+                        <div class="p-4 bg-white text-black">
+                            <p class="font-black uppercase text-sm">@midnight_runner</p>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-white p-2 thick-border font-black text-xs uppercase">
+                        Sticker: Stay Weird</div>
+                </div>
+                <!-- Social Card 5 -->
+                <div class="break-inside-avoid relative group">
+                    <div
+                        class="bg-white p-2 rounded-lg thick-border transform rotate-3 group-hover:rotate-0 transition-transform">
+                        <img class="w-full h-auto rounded-md grayscale hover:grayscale-0 transition-all duration-500"
+                            data-alt="Close up of action sports athlete sweating"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdwAtOttPpPdx79dl1wFzeEX84BfMyiIxSacUULsLJtLCWlcCQ7sT5uo4Z1SiDA-XkZPIl55KhBeROP6lXMYnEubMxr_KWZZ1EfJr3Je8eEa4wXymVVjEd2L-tqixFMCf4Re2zlpCgBST80CWg8Kl6xU_oHua9qETW8vBBTAlMVS0aPs3Io1Tc3E4N4EXrxvFJQsQSzHvaFXtXMEUqfDS-wxJWrSNQdNK-2UsrPp0QW5ybqNLF7LOCCwP3Fq0ujM8xiLGjKpb9k38" />
+                        <div class="p-4 bg-white text-black">
+                            <p class="font-black uppercase text-sm">@athlete_extreme</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Card 6 -->
+                <div class="break-inside-avoid relative group">
+                    <div
+                        class="bg-primary p-2 rounded-lg thick-border transform -rotate-1 group-hover:rotate-0 transition-transform">
+                        <div
+                            class="bg-black text-primary p-6 flex flex-col items-center justify-center text-center aspect-square rounded-md">
+                            <span class="material-icons text-6xl mb-4">camera_alt</span>
+                            <p class="font-black uppercase text-xl">Tag us to be featured</p>
+                            <p class="font-bold text-sm mt-2">#DRINKWEIRD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Maximalist Footer Section -->
+    <footer class="bg-black text-primary overflow-hidden border-t-8 border-primary">
+        <!-- Newsletter Signup Section -->
+        <div class="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Large Catchphrase -->
+                <div>
+                    <h2
+                        class="text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter uppercase mb-6">
+                        Join the <br /> <span class="text-outline">Weirdos</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl font-bold uppercase tracking-widest max-w-md">
+                        Get the latest drops, weird news, and early access to our wildest flavors.
+                    </p>
+                </div>
+                <!-- Signup Form -->
+                <div class="relative">
+                    <form class="flex flex-col gap-6">
+                        <div class="relative group">
+                            <input
+                                class="w-full bg-black border-4 border-primary text-primary placeholder-primary/50 text-2xl font-black p-6 rounded-lg focus:ring-0 focus:outline-none focus:border-white transition-colors uppercase"
+                                placeholder="YOUR@EMAIL.COM" type="email" />
+                        </div>
+                        <button
+                            class="w-full bg-primary text-black text-3xl font-black p-6 rounded-lg uppercase transition-all btn-hover active:translate-y-1 active:translate-x-1 active:shadow-none"
+                            type="submit">
+                            Grab the Can
+                        </button>
+                    </form>
+                    <div class="mt-8 flex gap-8 items-center">
+                        <span class="font-bold uppercase tracking-widest text-sm opacity-60">Follow the madness:</span>
+                        <div class="flex gap-6">
+                            <a class="text-4xl hover:scale-125 transition-transform" href="#"><span
+                                    class="sr-only">Instagram</span><i class="material-icons text-4xl">podcasts</i></a>
+                            <a class="text-4xl hover:scale-125 transition-transform" href="#"><span
+                                    class="sr-only">TikTok</span><i class="material-icons text-4xl">music_note</i></a>
+                            <a class="text-4xl hover:scale-125 transition-transform" href="#"><span
+                                    class="sr-only">X</span><i class="material-icons text-4xl">bolt</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Middle Links Section -->
+        <div class="border-y-4 border-primary/30">
+            <div class="max-w-7xl mx-auto px-6 py-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left">
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="text-4xl font-black uppercase mb-4 tracking-tighter">Drink<br />Weird</div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-xs font-black uppercase tracking-widest text-white mb-2">Locate</span>
+                        <a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Store
+                            Locator</a>
+                        <a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Bulk
+                            Order</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-xs font-black uppercase tracking-widest text-white mb-2">Legal stuff</span>
+                        <a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Privacy</a>
+                        <a class="text-2xl font-black uppercase hover:text-white transition-colors" href="#">Terms</a>
+                        <a class="text-2xl font-black uppercase hover:text-white transition-colors"
+                            href="#">Accessibility</a>
+                    </div>
+                    <div class="flex flex-col gap-4 items-center md:items-end justify-center">
+                        <img class="w-32 h-32 rounded-full border-4 border-primary object-cover grayscale hover:grayscale-0 transition-all cursor-pointer"
+                            data-alt="Abstract vibrant green digital art piece"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn_J7ZNLW46ffRF-J_vQRPesq9XgtnZ4h0GDB-mbPDEmlwkLiptEoXvLJhB8WN65u-xztK0pdNd-m85GtljWlaSGD6YWWl1lye6-B4uC1mUJhF4wwnE9SCNBvtVRO5e_3koseMMWnHojHiFmZ3boC0gJBTZEE5oYt89OI9C3HCpScYZu03JyBCulmQIK-h3_PewZNIpYqKiqF-ZsOycnJYjCpey-Ciiqk1pcBjRKYa4-C2MlB3QmiUWFEprM5JqK8VncWz5BJKkBs" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Marquee Branding -->
+        <div class="bg-primary text-black py-4 border-t-4 border-black select-none">
+            <div class="animate-marquee flex items-center">
+                <span class="text-4xl font-black uppercase mx-8">Stay Weird</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Drink Wild</span>
+                <span class="text-4xl font-black uppercase mx-8">Repeat</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Stay Weird</span>
+                <span class="text-4xl font-black uppercase mx-8">Drink Wild</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Repeat</span>
+                <span class="text-4xl font-black uppercase mx-8">Stay Weird</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Drink Wild</span>
+                <span class="text-4xl font-black uppercase mx-8">Repeat</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Stay Weird</span>
+                <span class="text-4xl font-black uppercase mx-8">Drink Wild</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Repeat</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="text-4xl font-black uppercase mx-8">Stay Weird</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Drink Wild</span>
+                <span class="text-4xl font-black uppercase mx-8">Repeat</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Stay Weird</span>
+                <span class="text-4xl font-black uppercase mx-8">Drink Wild</span>
+                <span class="text-4xl font-black uppercase mx-8 text-outline"
+                    style="-webkit-text-stroke: 2px #000;">Repeat</span>
+            </div>
+        </div>
+        <!-- Final Tiny Footer -->
+        <div class="bg-black py-4 px-6 text-center">
+            <p class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
+                © 2024 DRINK WEIRD CO. ALL RIGHTS RESERVED. NO REASON TO BE NORMAL.
+            </p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis()
+        lenis.on('scroll', (e) => {
+            // console.log(e) 
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf) 
+    </script>
+
+    <!-- GSAP Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Fade in sections on scroll
+        gsap.utils.toArray("section").forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                }
+            });
+        });
+
+        // Parallax for Hero Text
+        gsap.to(".text-\\[12rem\\]", {
+            xPercent: 15,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "main",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Stagger Product Cards
+        gsap.from(".grid .group", {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: ".grid", // Triggers when the first grid enters
+                start: "top 85%",
+            }
+        });
+
+        // Rotate elements on scroll
+        gsap.to(".rotate-weird-cw", {
+            rotation: 5,
+            scrollTrigger: {
+                trigger: ".rotate-weird-cw",
+                scrub: 1
+            }
+        });
+    </script>
+</body>
+
+</html>

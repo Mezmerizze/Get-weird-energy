@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#63ed0c",
+                        "background-light": "#f7f8f5",
+                        "background-dark": "#172210",
+                        "electric-purple": "#8b5cf6",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "brutal": "8px 8px 0px 0px rgba(0,0,0,1)",
+                        "brutal-sm": "4px 4px 0px 0px rgba(0,0,0,1)",
+                        "brutal-hover": "2px 2px 0px 0px rgba(0,0,0,1)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .psychedelic-bg {
+            background: linear-gradient(45deg, #63ed0c 25%, #8b5cf6 50%, #63ed0c 75%);
+            background-size: 400% 400%;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 2px black;
+            color: transparent;
+        }
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+<title>GET WEIRD | The High-Energy Beverage</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 overflow-x-hidden">
+<!-- Navigation Bar -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl z-50">
+<nav class="bg-white border-4 border-black rounded-xl px-6 py-4 flex items-center justify-between shadow-brutal">
+<div class="flex items-center gap-2">
+<div class="bg-primary w-10 h-10 rounded-full border-2 border-black flex items-center justify-center">
+<span class="material-icons text-black font-black">bolt</span>
+</div>
+<span class="text-2xl font-black tracking-tighter italic">WEIRD.</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-bold text-sm uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Drinks</a>
+<a class="hover:text-primary transition-colors" href="#">Philosophy</a>
+<a class="hover:text-primary transition-colors" href="#">Find Us</a>
+<a class="hover:text-primary transition-colors text-electric-purple" href="#">Merch</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary border-2 border-black p-2 rounded-lg hover:shadow-brutal-sm transition-all active:translate-x-1 active:translate-y-1">
+<span class="material-icons">shopping_bag</span>
+</button>
+<button class="md:hidden">
+<span class="material-icons text-3xl">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<main class="relative min-h-screen flex flex-col items-center justify-center pt-24 overflow-hidden">
+<!-- Background Elements -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="psychedelic-bg absolute inset-0"></div>
+<!-- Decorative "Weird" floating text -->
+<div class="absolute top-1/4 -left-20 rotate-12 opacity-10">
+<h2 class="text-[12rem] font-black leading-none text-stroke">WEIRD</h2>
+</div>
+<div class="absolute bottom-1/4 -right-20 -rotate-12 opacity-10">
+<h2 class="text-[12rem] font-black leading-none text-stroke">WIRED</h2>
+</div>
+</div>
+<div class="container mx-auto px-6 relative z-10 flex flex-col items-center">
+<!-- Headline -->
+<div class="text-center mb-8 relative">
+<span class="inline-block bg-electric-purple text-white font-black px-4 py-1 rounded-full text-sm uppercase tracking-widest mb-4 border-2 border-black shadow-brutal-sm">New Flavor: Radioactive Grape</span>
+<h1 class="text-7xl md:text-[10rem] font-black leading-[0.8] tracking-tighter text-black uppercase">
+                    GET <span class="text-primary italic">WEIRD</span><br/>
+                    STAY <span class="relative">WIRED
+                        <svg class="absolute -bottom-4 left-0 w-full h-8 text-primary" preserveaspectratio="none" viewbox="0 0 100 20">
+<path d="M0,10 Q25,20 50,10 T100,10" fill="none" stroke="currentColor" stroke-width="6"></path>
+</svg>
+</span>
+</h1>
+</div>
+<!-- Product Showcase Area -->
+<div class="relative w-full max-w-2xl h-[500px] flex items-center justify-center">
+<!-- Floating Badges -->
+<div class="absolute top-10 left-0 bg-white border-2 border-black p-4 rounded-xl rotate-[-15deg] shadow-brutal-sm z-20">
+<p class="font-black text-xs uppercase leading-none">Caffeine<br/><span class="text-3xl text-primary">200MG</span></p>
+</div>
+<div class="absolute bottom-20 right-0 bg-white border-2 border-black p-4 rounded-xl rotate-[10deg] shadow-brutal-sm z-20">
+<p class="font-black text-xs uppercase leading-none">Sugar<br/><span class="text-3xl text-electric-purple">ZERO</span></p>
+</div>
+<!-- 3D Can Render -->
+<div class="relative w-64 h-full md:w-80 transition-transform duration-500 hover:scale-105 cursor-pointer">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-110"></div>
+<img alt="Weird Energy Can" class="w-full h-full object-contain relative z-10 drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]" data-alt="Modern neon green energy drink can 3D render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR4yvXc5NBMx8uL2n30uvUZHHRE9BpcH9Vi2hH8jr-YBWBqf8Kbykhn6eYhKNRZ_-5BpD2WhZuAr-yI19WGF4d9fA0wfcILnXq6mrSNryg5sKzXsyqBeEZxeHRs3-ZZJ5VRMbAQw34K048hFHDwkdC-E6VmpoZhRSL6dp9BTGkT20Dx7e8DbymgqVmLLlpT7jlX6YqT1lBk7dJQm3ug0JqHdw_uBULyrZBzFSEuXH32ehEXLxHFhsniY2oNAH5YovA-o960lQU0Ew"/>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="mt-8">
+<button class="group relative inline-flex items-center gap-4 bg-primary text-black font-black text-2xl md:text-4xl px-12 py-6 rounded-2xl border-4 border-black shadow-brutal hover:shadow-brutal-hover hover:translate-x-1 hover:translate-y-1 transition-all">
+                    SHOP THE CHAOS
+                    <span class="material-icons text-4xl group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Scrolling Ticker -->
+<section class="bg-black py-6 border-y-4 border-black overflow-hidden transform -rotate-1 w-[110%] -ml-[5%]">
+<div class="ticker-wrap">
+<div class="ticker-content flex items-center gap-12">
+<span class="text-primary text-4xl font-black italic flex items-center gap-4">
+<span class="material-icons text-4xl">star</span> NO FILLERS
+                </span>
+<span class="text-white text-4xl font-black italic flex items-center gap-4">
+<span class="material-icons text-4xl text-electric-purple">flash_on</span> MAXIMUM BRAIN POWER
+                </span>
+<span class="text-primary text-4xl font-black italic flex items-center gap-4">
+<span class="material-icons text-4xl">psychology</span> EMBRACE THE STRANGE
+                </span>
+<span class="text-white text-4xl font-black italic flex items-center gap-4">
+<span class="material-icons text-4xl text-electric-purple">eco</span> PLANT POWERED
+                </span>
+<!-- Duplicate for seamless scroll -->
+<span class="text-primary text-4xl font-black italic flex items-center gap-4">
+<span class="material-icons text-4xl">star</span> NO FILLERS
+                </span>
+<span class="text-white text-4xl font-black italic flex items-center gap-4">
+<span class="material-icons text-4xl text-electric-purple">flash_on</span> MAXIMUM BRAIN POWER
+                </span>
+</div>
+</div>
+</section>
+<!-- Content Sections Teaser -->
+<section class="py-24 container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white border-4 border-black p-8 rounded-2xl shadow-brutal hover:scale-[1.02] transition-transform group">
+<div class="w-16 h-16 bg-primary border-2 border-black rounded-xl mb-6 flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform">
+<span class="material-icons text-3xl">local_fire_department</span>
+</div>
+<h3 class="text-2xl font-black mb-4">FRUIT CHAOS</h3>
+<p class="text-slate-600 font-medium">A blend of exotic fruits that shouldn't exist in nature but do in this can.</p>
+</div>
+<div class="bg-white border-4 border-black p-8 rounded-2xl shadow-brutal hover:scale-[1.02] transition-transform group md:-translate-y-8">
+<div class="w-16 h-16 bg-electric-purple border-2 border-black rounded-xl mb-6 flex items-center justify-center -rotate-6 group-hover:rotate-0 transition-transform">
+<span class="material-icons text-3xl text-white">science</span>
+</div>
+<h3 class="text-2xl font-black mb-4">BIO-HACKED</h3>
+<p class="text-slate-600 font-medium">Crafted by scientists who haven't slept since 2019. Just for you.</p>
+</div>
+<div class="bg-white border-4 border-black p-8 rounded-2xl shadow-brutal hover:scale-[1.02] transition-transform group">
+<div class="w-16 h-16 bg-primary border-2 border-black rounded-xl mb-6 flex items-center justify-center rotate-6 group-hover:rotate-[-12deg] transition-transform">
+<span class="material-icons text-3xl">public</span>
+</div>
+<h3 class="text-2xl font-black mb-4">RECYCLED DNA</h3>
+<p class="text-slate-600 font-medium">100% recyclable cans because we care about the planet we're taking over.</p>
+</div>
+</div>
+</section>
+<footer class="bg-white border-t-4 border-black py-12 px-6">
+<div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex items-center gap-2">
+<div class="bg-black w-8 h-8 rounded-full flex items-center justify-center">
+<span class="material-icons text-primary text-sm">bolt</span>
+</div>
+<span class="text-xl font-black tracking-tighter italic">WEIRD.</span>
+</div>
+<div class="flex gap-6">
+<a class="w-12 h-12 border-2 border-black rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons">facebook</span>
+</a>
+<a class="w-12 h-12 border-2 border-black rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons">camera_alt</span>
+</a>
+<a class="w-12 h-12 border-2 border-black rounded-full flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-icons">alternate_email</span>
+</a>
+</div>
+<p class="text-sm font-bold opacity-50">© 2024 WEIRD DRINKS INC. STAY WIRED.</p>
+</div>
+</footer>
+</body></html>
