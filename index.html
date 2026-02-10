@@ -233,7 +233,7 @@
             </div>
             <div class="flex items-center gap-4">
                 <button
-                    class="bg-primary border-2 border-black p-2 rounded-lg hover:shadow-brutal-sm transition-all active:translate-x-1 active:translate-y-1">
+                    class="hidden md:block bg-primary border-2 border-black p-2 rounded-lg hover:shadow-brutal-sm transition-all active:translate-x-1 active:translate-y-1">
                     <span class="material-icons">shopping_bag</span>
                 </button>
                 <button id="mobile-menu-btn" class="md:hidden">
@@ -241,24 +241,24 @@
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="fixed inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md z-[60] flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-300 md:hidden">
-            <button id="close-menu-btn"
-                class="absolute top-6 right-6 bg-primary border-2 border-black rounded-full p-2 hover:rotate-90 transition-transform">
-                <span class="material-icons text-3xl text-black">close</span>
-            </button>
-            <a href="#"
-                class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Drinks</a>
-            <a href="#"
-                class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Philosophy</a>
-            <a href="#"
-                class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Find
-                Us</a>
-            <a href="#"
-                class="text-5xl font-black uppercase text-electric-purple hover:text-primary hover:skew-x-[-10deg] transition-transform">Merch</a>
-        </div>
     </header>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white/95 dark:bg-black/95 backdrop-blur-md z-[60] flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-300 md:hidden">
+        <button id="close-menu-btn"
+            class="absolute top-6 right-6 bg-primary border-2 border-black rounded-full p-2 hover:rotate-90 transition-transform">
+            <span class="material-icons text-3xl text-black">close</span>
+        </button>
+        <a href="#"
+            class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Drinks</a>
+        <a href="#"
+            class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Philosophy</a>
+        <a href="#"
+            class="text-5xl font-black uppercase hover:text-primary hover:skew-x-[-10deg] transition-transform">Find
+            Us</a>
+        <a href="#"
+            class="text-5xl font-black uppercase text-electric-purple hover:text-primary hover:skew-x-[-10deg] transition-transform">Merch</a>
+    </div>
     <!-- Hero Section -->
     <main class="relative min-h-screen flex flex-col items-center justify-center pt-48 pb-32 md:pt-32 overflow-hidden">
         <!-- Background Elements -->
@@ -517,21 +517,15 @@
     <!-- Social Proof Grid -->
     <div class="w-full overflow-hidden relative">
         <section class="bg-primary py-12 border-y-4 border-black -rotate-1 w-[110%] -ml-[5%] mb-20">
-            <div class="flex animate-scroll whitespace-nowrap overflow-hidden">
-                <div class="flex space-x-20 text-4xl font-black text-black uppercase tracking-tighter">
-                    <span>AS SEEN ON THE STREETS</span>
-                    <span>•</span>
-                    <span>100% NATURAL CAFFEINE</span>
-                    <span>•</span>
-                    <span>NO BS INGREDIENTS</span>
-                    <span>•</span>
-                    <span>DRINK WEIRD BE HAPPY</span>
-                    <span>•</span>
-                    <span>AS SEEN ON THE STREETS</span>
-                    <span>•</span>
-                    <span>100% NATURAL CAFFEINE</span>
-                    <span>•</span>
-                    <span>NO BS INGREDIENTS</span>
+            <div class="flex animate-marquee whitespace-nowrap overflow-hidden">
+                <div class="flex shrink-0 gap-12 pr-12 text-4xl font-black text-black uppercase tracking-tighter">
+                    <span>AS SEEN ON THE STREETS • 100% NATURAL CAFFEINE • NO BS INGREDIENTS • DRINK WEIRD BE HAPPY •
+                    </span>
+                </div>
+                <div class="flex shrink-0 gap-12 pr-12 text-4xl font-black text-black uppercase tracking-tighter"
+                    aria-hidden="true">
+                    <span>AS SEEN ON THE STREETS • 100% NATURAL CAFFEINE • NO BS INGREDIENTS • DRINK WEIRD BE HAPPY •
+                    </span>
                 </div>
             </div>
         </section>
